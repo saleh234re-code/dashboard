@@ -1,25 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-
+import  ProductsContext  from './Context/ProductsContext';
+  import SideBar from "./Components/sideBar"
+  import Users from './Context/Users';
+  import { BrowserRouter, Route,Routes } from 'react-router-dom';
+  import Dashboard from './pages/Dashboard';
+  import OrderContext from './Context/OrdersContext';
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <OrderContext>    
+  <Users> 
+          <ProductsContext > 
+
+     <div className="App">
+      <SideBar/>
+
+      </div>
+                        </ProductsContext>
+                        </Users>
+                     <BrowserRouter> 
+                   
+<Routes>
+ 
+     
+</Routes>
+   </BrowserRouter>
+ </OrderContext>
+
+   );
 }
 
 export default App;
